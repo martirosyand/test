@@ -4,6 +4,7 @@ FROM openjdk:17-slim
 # Set the working directory
 WORKDIR /app
 
+
 # Copy application source folder into maven directory
 COPY target/spring*.jar .
 
