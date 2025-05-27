@@ -8,6 +8,7 @@ WORKDIR /app
 # Copy application source folder into maven directory
 COPY target/spring*.jar .
 
+
 # Rename SNAPSHOT
 RUN mv spring*.jar app.jar
 
