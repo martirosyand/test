@@ -36,7 +36,7 @@ pipeline {
                 script {
                     sh 'mvn package -DskipTests'
 
-                    def repo = (env.BRANCH_NAME == 'main') ? 'main' : 'mr'
+                    def repo = (env.BRANCH_NAME == 'main') ? 'test-main' : 'test-mr'
                     def image = "${DOCKERHUB_CREDENTIALS_USR}/${repo}:spring-petclinic-${GIT_COMMIT_SHORT}"
 
                     sh "docker build -t ${image} ."
